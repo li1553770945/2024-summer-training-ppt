@@ -6,5 +6,6 @@ dist
 .remote-assets
 components.d.ts
 *.pdf
-code
+code/**
+!code/**/
 !code/**/*.cpp
