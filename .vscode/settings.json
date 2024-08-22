@@ -80,5 +80,6 @@
         "variant": "cpp",
         "vector": "cpp",
         "algorithm": "cpp"
-    }
+    },
+    "C_Cpp.default.compilerPath": "D:\\TDM-GCC64\\bin\\g++.exe"
 }
