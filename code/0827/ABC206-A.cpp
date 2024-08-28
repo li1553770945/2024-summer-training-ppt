@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <math.h>
 using namespace std;
 
 int main()
@@ -8,7 +8,7 @@ int main()
     cin >> n; // 读取不含税的价格N
 
     // 计算含税价格，按照题目描述使用floor函数取整
-    int taxed_price = 1.08 * n;
+    int taxed_price = floor(1.08 * n);
 
     // 根据含税价格与206的比较，输出对应结果
     if (taxed_price < 206)
