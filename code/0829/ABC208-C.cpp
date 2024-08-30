@@ -7,8 +7,8 @@ long long candy_count[MAX_N + 1]; // 从1开始索引的糖果计数数组
 
 struct Citizen
 {
-    int id;
-    int index;
+    int id;// 身份证号
+    int index; // 原始索引
     bool operator<(const Citizen &other) const
     {
         return id < other.id;
@@ -19,7 +19,7 @@ int main()
 {
     long long N;
     long long K;
-    scanf("%lld%lld", &N, &K);
+    scanf("%lld%lld", &N, &K); // 输入公民数量N和糖果数量K
 
     for (int i = 1; i <= N; ++i)
     {
