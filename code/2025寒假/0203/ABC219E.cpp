@@ -72,11 +72,11 @@ int check()
     {
 		for(int j = 1; j <= 4; j++) 
         {
-			if(f[i][j]) 
-                sum++;
+			if(f[i][j])  //f[i][j]为1，说明bfs能走到这个位置
+                sum++; // 能走到的方块数+1
 		}
 	}
-	if(sum != cnt) 
+	if(sum != cnt)  // 有的方块走不通，护城河不联通
         return 0;	//不连通
 	for(int i = 1; i <= 4; i++) 
     {
@@ -103,10 +103,10 @@ void dfs(int x, int y)
 		ans += check();
 		return;
 	}
-	flag[x][y] = 1;
-	dfs(x, y + 1);
-	flag[x][y] = 0;
-	dfs(x, y + 1);
+	flag[x][y] = 1; // 被护城河包围
+	dfs(x, y + 1); // dfs
+	flag[x][y] = 0; //没有被包围
+	dfs(x, y + 1); //dfs
 }
 int main() 
 {

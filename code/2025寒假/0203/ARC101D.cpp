@@ -25,15 +25,16 @@ long long check(long long x)
 	for(long long i=1;i<=n;i++)
 	{
 		if(a[i]>=x) b[i]=1;
-		else b[i]=-1;
+		else b[i]=-1; // 构建辅助数组b
 		sum[i]=sum[i-1]+b[i];
 	}
 	add(N,1);
 	for(long long i=1;i<=n;i++)
 	{
 		ans+=ask(sum[i]+N);
-		add(sum[i]+N,1);
+		add(sum[i]+N,1); // 查询
 	}
+    
 	if(ans>=(n*(n+1)/2-1)/2+1)
         return 1;
 	return 0;
@@ -44,7 +45,7 @@ int main()
 	for(long long i=1;i<=n;i++) scanf("%lld",&a[i]),tmp[i]=a[i];
 	sort(tmp+1,tmp+n+1);
 	long long l=1,r=n,ans=0;
-	while(l<=r) //二分 
+	while(l<=r) //二分可能的中位数
 	{
 		long long mid=(l+r)/2;
 		if(check(tmp[mid])) ans=tmp[mid],l=mid+1;
